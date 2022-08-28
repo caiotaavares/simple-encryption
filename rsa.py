@@ -27,11 +27,16 @@ def cript(M, public_key, n):
     return c
 
 
+def decript(cript, pritave_key, n):
+    dec = pow(cript, pritave_key, n)
+    return dec
+
+
 def RSA(message, public_key):
     # --- Escolha dois números primos ---
     print('Escolhendo primos...')
-    p = 82499  # 3
-    q = 82493  # 11
+    p = 547  # 3
+    q = 541  # 11
 
     # --- Calcular o produto dos dois números do passo anterior ---
     print('Calculando produto dos primos...')
@@ -45,6 +50,7 @@ def RSA(message, public_key):
     print('Calculando a chave pública...')
     # public_key = ultimo_primo(totiente)
     # public_key = public_key.pop()
+    # print(public_key)
     print('Chave pública: ', public_key)
 
     # --- Calculando o “d” da chave privada ---
@@ -61,4 +67,7 @@ def RSA(message, public_key):
 
     cript_message = cript(message, public_key, n)
     print('Mensagem criptografada', cript_message)
+
+    decript_message = decript(cript_message, private_key, n)
+    print('Mensagem descriptografada', decript_message)
 

@@ -1,8 +1,8 @@
 def DiffieHelman(primo, gerador):
     # Número confiencial de A
-    a = 82499  # 82499
+    a = 547  # 82499
     # Número confidencia de B
-    b = 82493  # 82493
+    b = 541  # 82493
 
     # Resultado público de A
     PublicResultA = pow(gerador, a, primo)
